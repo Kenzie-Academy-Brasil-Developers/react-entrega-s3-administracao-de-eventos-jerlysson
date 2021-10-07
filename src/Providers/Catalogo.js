@@ -7,8 +7,9 @@ export const CatalogoContext = createContext([]);
 export const CatalogoProvider = ({ children }) => {
   const [catalogo, setCatalogo] = useState([]);
   const history = useHistory();
-  const GetPage = (path) => {
+  const GetPage = (path, set) => {
     history.push(path);
+    set(false);
   };
 
   useEffect(() => {

@@ -1,4 +1,12 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+const BoxPosition = keyframes`
+ 0%{
+   top: -200px
+ }
+ 100%{
+   top: 150px
+ }
+`;
 
 export const SelectBox = styled.div`
   position: fixed;
@@ -6,11 +14,15 @@ export const SelectBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  width: 90vw;
+  width: 90%;
   height: 75vh;
   background: #ffeed4ad;
+  animation: ${BoxPosition} 0.5s both;
   img {
     width: 65px;
+  }
+  @media (min-width: 700px) {
+    width: 70%;
   }
 `;
 export const Close = styled.span`
